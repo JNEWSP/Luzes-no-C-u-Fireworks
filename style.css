@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0; /* Remove a margem padrão do body */
+}
+
+body {
+  overflow: hidden; /* Impede a rolagem da página */
+  display: grid;
+  color: white; /* Cor do texto */
+  background: radial-gradient(circle, #1a1a1a, #333); /* Fundo dinâmico */
+}
+
+pointer-particles {
+  display: block; /* Garante que o elemento customizado seja um bloco */
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  pointer-events: none; /* Impede que o elemento capture eventos do mouse */
+}
+
+.merry-christmas {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em; /* Aumenta o tamanho da fonte */
+  font-weight: bold;
+  font-family: 'Great Vibes', cursive; /* Fonte personalizada */
+  color: white;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 0, 0, 0.8); /* Sombras mais intensas */
+  animation: rgbAnimation 3s infinite, fadeIn 1s; /* Adiciona animação de fade-in */
+}
+
+@keyframes rgbAnimation {
+  0% { color: red; }
+  33% { color: green; }
+  66% { color: blue; }
+  100% { color: red; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#countdown {
+  position: absolute;
+  bottom: 10%; /* Posiciona o contador na parte inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3em; /* Aumenta o tamanho da fonte do contador */
+  font-family: 'Great Vibes', cursive; /* Fonte personalizada */
+  color: white; /* Cor do texto */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 0, 0, 0.8); /* Sombra do texto */
+  animation: fadeIn 1s, rgbAnimation 3s infinite; /* Animações */
+}
+
+.lights-container {
+  position: absolute;
+  top: 10%; /* Ajuste conforme necessário */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espaçamento entre as luzes */
+}
+
+.light {
+  width: 30px; /* Largura da luz */
+  height: 30px; /* Altura da luz */
+  border-radius: 50%; /* Faz as luzes serem circulares */
+  animation: blink 1s infinite alternate; /* Animação de piscar */
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.5; /* Opacidade inicial */
+  }
+  100% {
+    opacity: 1; /* Opacidade final */
+  }
+}
+
+.ornament {
+  width: 20px;
+  height: 20px;
+  background-color: gold; /* Cor do enfeite */
+  border-radius: 50%; /* Forma circular */
+  position: absolute;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Sombra do enfeite */
+  animation: bounce 2s infinite; /* Animação de balançar */
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

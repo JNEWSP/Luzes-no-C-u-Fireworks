@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Natal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"> <!-- Fonte personalizada -->
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Estilo adicional para o texto "Feliz Natal!" */
+    .merry-christmas {
+      font-size: 6em; /* Aumenta o tamanho da fonte */
+      font-family: 'Pacifico', cursive; /* Fonte personalizada */
+      color: white; /* Cor do texto */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 0, 0, 0.8); /* Sombra do texto */
+      position: absolute;
+      top: 10%; /* Posiciona o texto na parte superior */
+      left: 50%;
+      transform: translateX(-50%);
+      animation: fadeIn 1s, rgbAnimation 3s infinite; /* Animações */
+    }
+
+    /* Estilo adicional para o contador */
+    #countdown {
+      position: absolute;
+      bottom: 10%; /* Posiciona o contador na parte inferior */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 6em; /* Aumenta o tamanho da fonte do contador */
+      font-family: 'Pacifico', cursive; /* Fonte personalizada */
+      color: white; /* Cor do texto */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 0, 0, 0.8); /* Sombra do texto */
+      animation: fadeIn 1s, rgbAnimation 3s infinite; /* Animações */
+    }
+
+    /* Estilo das luzes de Natal */
+    .lights-container {
+      position: absolute;
+      top: 10%; /* Ajuste conforme necessário */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      gap: 10px; /* Espaçamento entre as luzes */
+    }
+
+    .light {
+      width: 30px; /* Largura da luz */
+      height: 30px; /* Altura da luz */
+      border-radius: 50%; /* Faz as luzes serem circulares */
+      animation: blink 1s infinite alternate; /* Animação de piscar */
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0.5; /* Opacidade inicial */
+      }
+      100% {
+        opacity: 1; /* Opacidade final */
+      }
+    }
+
+    @keyframes rgbAnimation {
+      0% { color: red; }
+      33% { color: green; }
+      66% { color: blue; }
+      100% { color: red; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .ornament {
+      width: 20px;
+      height: 20px;
+      background-color: gold; /* Cor do enfeite */
+      border-radius: 50%; /* Forma circular */
+      position: absolute;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Sombra do enfeite */
+      animation: bounce 2s infinite; /* Animação de balançar */
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <pointer-particles></pointer-particles>
+  <div class="merry-christmas">Feliz Natal!</div>
+  
+  <!-- Contagem Regressiva -->
+  <div id="countdown" class="countdown"></div>
+
+  <!-- Luzes de Natal -->
+  <div class="light" style="background-color: red;"></div>
+  <div class="light" style="background-color: green;"></div>
+  <div class="light" style="background-color: yellow;"></div>
+  <div class="light" style="background-color: blue;"></div>
+  <div class="light" style="background-color: purple;"></div>
+</div>
+
+<!-- Enfeites de Natal (ornaments) -->
+<div class="ornament" style="top: 30%; left: 20%;"></div>
+<div class="ornament" style="top: 50%; left: 40%;"></div>
+<div class="ornament" style="top: 10%; left: 10%;"></div>
+<div class="ornament" style="top: 30%; left: 50%;"></div>
+<div class="ornament" style="top: 20%; left: 30%;"></div>
+<div class="ornament" style="top: 90%; left: 60%;"></div>
+<div class="ornament" style="top: 70%; left: 70%;"></div>
+<div class="ornament" style="top: 60%; left: 100%;"></div>
+<div class="ornament" style="top: 80%; left: 80%;"></div>
+
+<script src="./script.js"></script>
+</body>
+</html>
